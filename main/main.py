@@ -3,6 +3,7 @@
 
 import getopt
 import inspect
+import importlib
 import os
 import sys
 
@@ -37,7 +38,7 @@ def main(argv):
             raise Usage()
 
     if module is None: raise Usage()
-    module = __import__(module)
+    module = importlib.import_module(module)
     for attr in dir(module):
         attr = getattr(module, attr)
         if inspect.isclass(attr) and issubclass(attr, Module) and attr.__name__ != 'Module':
