@@ -2,6 +2,9 @@
 
 A simple framework that using automatic import module
 
+### Requirements
+
+* Python 2.7+
 
 ### Architecture
 
